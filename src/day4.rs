@@ -47,26 +47,6 @@ pub fn check(input: &[u8]) -> usize {
     let mut valid = 0;
     for trial in 372037..905157 {
         let pass = trial.to_string();
-        // let mut doubleCount = 0;
-        // for i in 1..pass.len() {
-        //     if pass.chars().nth(i) == pass.chars().nth(i - 1) {
-        //         doubleCount += 1;
-        //     }
-        // }
-
-        // if doubleCount % 2  != 0 {
-        //     continue;
-        // }
-
-        // let mut ascending = true;
-        // for i in 1..pass.len() {
-        //     if pass.chars().nth(i) < pass.chars().nth(i - 1) {
-        //         ascending = false
-        //     }
-        // }
-        // if !ascending {
-        //     continue;
-        // }
         if (validate(&pass)) {
             valid += 1;
         }
@@ -82,9 +62,7 @@ pub fn validate(input: &str) -> bool {
     let mut idx = 0;
     let mut got_double = false;
     for mut _i in 0..pass.len()-1 {
-        //println!("old idx is {}", idx);
         for j in 1..pass.len() {
-            //println!("here at i={}, j={}", idx, j);
             if pass.chars().nth(idx) == pass.chars().nth(idx + j) {
                 counts += 1;
             } else {
@@ -96,22 +74,10 @@ pub fn validate(input: &str) -> bool {
         }
         
         idx+=counts;
-        //println!("new idx is {}", idx);
-        //println!("{}", counts);
         counts = 1;
         if idx >= pass.len()-1 {
           break;
         }
-    }
-    let mut doubleCount = 0;
-    for i in 1..pass.len() {
-            if pass.chars().nth(i) == pass.chars().nth(i - 1) {
-                doubleCount += 1;
-            }
-        }
-
-    if doubleCount == 0 {
-        return false;
     }
 
     let mut ascending = true;

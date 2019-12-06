@@ -4,7 +4,7 @@ use std::env;
 use std::io;
 use std::iter::FromIterator;
 
-#[aoc_generator(day2)]
+#[aoc_generator(day3)]
 fn to_points(input: &str) -> impl Iterator<Item = (i32, i32)> + '_ {
     input
         .split(',')
@@ -30,7 +30,7 @@ fn to_points(input: &str) -> impl Iterator<Item = (i32, i32)> + '_ {
         .flatten()
 }
 
-#[aoc(day2, part1)]
+#[aoc(day3, part1)]
 pub fn part1<'a, I, S>(lines: I) -> Option<usize>
 where
     I: IntoIterator<Item = &'a S>,
@@ -54,7 +54,7 @@ where
     return result;
 }
 
-#[aoc(day2, part2)]
+#[aoc(day3, part2)]
 pub fn part2<'a, I, S>(lines: I) -> Option<usize>
 where
     I: IntoIterator<Item = &'a S>,

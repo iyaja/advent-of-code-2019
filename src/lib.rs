@@ -10,6 +10,8 @@ extern crate aoc_runner_derive;
 // pub mod day4;
 // pub mod day5;
 // pub mod day6;
-pub mod day8;
+// pub mod day8;
+// pub mod day14;
+// pub mod y2015;
 
 aoc_lib!{ year = 2019 }
